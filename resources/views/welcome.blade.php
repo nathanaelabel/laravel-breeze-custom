@@ -9,38 +9,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 font-sans antialiased min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-white/90 backdrop-blur-sm shadow-lg border-b border-indigo-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex items-center gap-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Car Marketplace</h1>
-                    </div>
-                </div>
-                
-                @if (Route::has('login'))
-                    <div class="flex items-center gap-4">
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Dashboard</a>
-                            <a href="{{ route('cars.index') }}" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">My Cars</a>
-                        @else
-                            <a href="{{ route('login') }}" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Log in</a>
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-200 font-medium">Register</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-            </div>
-        </div>
-    </nav>
+    <!-- Unified Navigation -->
+    <x-site-navigation />
 
     <!-- Hero Section -->
     <div class="relative overflow-hidden">
