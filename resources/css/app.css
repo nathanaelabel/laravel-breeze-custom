@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --brand-dark: #0F2854;
+    --brand-mid: #1C4D8D;
+    --brand-bright: #4988C4;
+    --brand-soft: #BDE8F5;
+    --brand-hero-start: #E3F2FB;
+    --brand-hero-end: #9CC7E8;
+    --brand-section-start: #F5FBFF;
+    --brand-section-end: #FFFFFF;
+}
+
+@layer utilities {
+    .bg-brand-gradient {
+        @apply bg-gradient-to-br from-[var(--brand-dark)] via-[var(--brand-mid)] to-[var(--brand-bright)];
+    }
+
+    .bg-hero-gradient {
+        @apply bg-gradient-to-br from-[var(--brand-hero-start)] via-[var(--brand-soft)] to-[var(--brand-hero-end)];
+    }
+
+    .bg-hero-overlay {
+        background: linear-gradient(90deg, rgba(227, 242, 251, 0.70), rgba(156, 199, 232, 0.50));
+    }
+
+    .bg-section-gradient {
+        @apply bg-gradient-to-b from-[var(--brand-section-start)] to-[var(--brand-section-end)];
+    }
+
+    .bg-brand-cta {
+        @apply bg-gradient-to-r from-[var(--brand-dark)] to-[var(--brand-mid)];
+    }
+
+    .bg-brand-overlay {
+        @apply bg-gradient-to-r from-[var(--brand-dark)]/15 to-[var(--brand-mid)]/15;
+    }
+
+    .border-brand-soft {
+        @apply border-[var(--brand-soft)]/60;
+    }
+
+    .text-brand-dark {
+        color: var(--brand-dark);
+    }
+
+    .ring-brand {
+        @apply ring-[var(--brand-mid)];
+    }
+}
